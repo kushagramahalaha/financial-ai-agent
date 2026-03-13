@@ -68,7 +68,7 @@ retriever = db.as_retriever(search_kwargs={"k":3})
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
-    temprature=0.7
+    temperature=0.7
 )
 
 
