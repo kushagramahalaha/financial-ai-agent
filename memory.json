@@ -1,0 +1,35 @@
+{
+    "user": {
+        "user_id": "kush001",
+        "name": "Rahul",
+        "created_at": "2026-04-18 01:04:29.677273"
+    },
+    "long_term": {
+        "profile": {
+            "income": 100000,
+            "fixed_expenses": 21000,
+            "risk_tolerance": "medium"
+        },
+        "goals": [
+            {
+                "goal": "buy a car in two years",
+                "created_at": "2026-04-18 18:15:25.919466"
+            }
+        ],
+        "portfolio": [],
+        "transactions": [
+            {
+                "type": "expense",
+                "amount": 2100000,
+                "date": "2026-04-19 00:01:14.360914"
+            }
+        ]
+    },
+    "short_term": {
+        "last_action": null,
+        "last_transaction": null,
+        "session_context": null
+    },
+    "derived": {},
+    "alerts": []
+}

@@ -1,0 +1,76 @@
+[INCOME_TAX_BASICS_INDIA]
+
+Income tax is a direct tax imposed on individuals based on income.
+
+Types of Income:
+- Salary
+- Business/Profession
+- Capital Gains
+- House Property
+- Other Sources
+
+---
+
+[TAX_REGIMES]
+
+1. Old Tax Regime:
+- Allows deductions
+- Sections: 80C, 80D, HRA, etc.
+
+2. New Tax Regime:
+- Lower tax rates
+- No major deductions
+
+---
+
+[TAX_SLABS_NEW_REGIME]
+
+Income Range (₹):
+- 0 – 3L → 0%
+- 3L – 6L → 5%
+- 6L – 9L → 10%
+- 9L – 12L → 15%
+- 12L – 15L → 20%
+- Above 15L → 30%
+
+---
+
+[DEDUCTIONS_OLD_REGIME]
+
+1. Section 80C:
+- Limit: ₹1.5 lakh
+- Includes: PPF, ELSS, LIC, FD
+
+2. Section 80D:
+- Health insurance premium
+
+3. HRA:
+- House rent allowance exemption
+
+---
+
+[CAPITAL_GAINS_TAX]
+
+1. Short-Term Capital Gain (STCG):
+- Holding < 1 year (stocks)
+- Tax: 15%
+
+2. Long-Term Capital Gain (LTCG):
+- Holding > 1 year
+- Tax: 10% above ₹1 lakh
+
+---
+
+[TAX_SAVING_TIPS]
+
+- Invest in ELSS for tax + returns
+- Use 80C fully
+- Choose regime based on deductions
+
+---
+
+[EXAMPLE]
+
+If LTCG = ₹1.5 lakh:
+Taxable = ₹50,000
+Tax = 10% of ₹50,000 = ₹5,000

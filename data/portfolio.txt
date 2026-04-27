@@ -1,0 +1,155 @@
+[PORTFOLIO_BASICS]
+
+A portfolio is a collection of financial investments such as stocks, mutual funds, bonds, and cash.
+
+Goal:
+- Maximize returns
+- Minimize risk through diversification
+
+---
+
+[ASSET_CLASSES]
+
+1. Equity:
+- Stocks, equity mutual funds
+- High risk, high return
+
+2. Debt:
+- Bonds, fixed deposits, debt funds
+- Low risk, stable returns
+
+3. Gold:
+- Hedge against inflation
+
+4. Cash:
+- Liquidity and emergency use
+
+---
+
+[DIVERSIFICATION]
+
+Diversification reduces risk by spreading investments across different assets.
+
+Example:
+- Stocks + Bonds + Gold
+
+Avoid:
+- Investing all money in one stock or sector
+
+---
+
+[RISK_PROFILING]
+
+1. Conservative Investor:
+- Low risk tolerance
+- Focus: Capital protection
+- Allocation: 20% equity, 60% debt, 20% gold
+
+2. Moderate Investor:
+- Balanced risk
+- Allocation: 50% equity, 30% debt, 20% gold
+
+3. Aggressive Investor:
+- High risk tolerance
+- Allocation: 70–80% equity, rest debt/gold
+
+---
+
+[ASSET_ALLOCATION_STRATEGY]
+
+Rule:
+Asset Allocation = Based on age + risk appetite
+
+Example Rule:
+Equity % ≈ 100 - Age
+
+Example:
+Age = 25 → Equity ≈ 75%
+
+---
+
+[REBALANCING]
+
+Rebalancing means adjusting portfolio to maintain target allocation.
+
+When to rebalance:
+- Every 6–12 months
+- When allocation deviates by >5–10%
+
+Example:
+Target equity = 60%
+Actual = 75% → Sell equity, buy debt
+
+---
+
+[INVESTMENT_STRATEGIES]
+
+1. Long-Term Investing:
+- Hold assets for years
+- Focus on compounding
+
+2. Value Investing:
+- Buy undervalued assets
+
+3. Growth Investing:
+- Invest in high-growth companies
+
+4. Passive Investing:
+- Index funds (NIFTY 50)
+
+---
+
+[GOAL_BASED_INVESTING]
+
+Each investment should have a goal:
+
+- Short-Term (0–3 years):
+  → Debt funds, FD
+
+- Medium-Term (3–7 years):
+  → Hybrid funds
+
+- Long-Term (7+ years):
+  → Equity, index funds
+
+---
+
+[EMERGENCY_FUND]
+
+Maintain:
+- 3–6 months of expenses
+
+Keep in:
+- Savings account or liquid funds
+
+---
+
+[COMMON_MISTAKES]
+
+- No diversification
+- Frequent buying/selling
+- Ignoring asset allocation
+- Investing without goals
+- Emotional decisions
+
+---
+
+[EXAMPLE_PORTFOLIO]
+
+Investor: Age 25, Moderate Risk
+
+Allocation:
+- 60% Equity (Index + Large Cap)
+- 25% Debt Funds
+- 10% Gold
+- 5% Cash
+
+---
+
+[DECISION_RULES_FOR_AGENT]
+
+- If user is young (<30): Suggest higher equity exposure
+- If risk is low: Increase debt allocation
+- If goal is short-term: Avoid equity
+- If market is volatile: Suggest SIP instead of lump sum
+- If portfolio is concentrated: Recommend diversification

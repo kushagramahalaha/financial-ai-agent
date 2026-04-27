@@ -1,0 +1,69 @@
+[STOCK_MARKET_BASICS]
+
+Stocks represent ownership in a company. When you buy a stock, you own a portion of that company.
+
+Types of Stocks:
+- Large Cap: Stable companies (e.g., Reliance, TCS)
+- Mid Cap: Growth potential, moderate risk
+- Small Cap: High risk, high return
+
+Key Concepts:
+- Market Capitalization = Share Price × Total Shares
+- Dividend: Profit shared with investors
+- Capital Gain: Profit from selling stock
+
+---
+
+[VALUATION_METRICS]
+
+1. P/E Ratio (Price to Earnings)
+Formula: P/E = Market Price / EPS
+- High P/E → Growth expectation
+- Low P/E → Undervalued or risky
+
+2. EPS (Earnings Per Share)
+Formula: EPS = Net Profit / Total Shares
+
+3. ROE (Return on Equity)
+Formula: ROE = Net Income / Shareholder Equity
+
+---
+
+[TRADING_TYPES]
+
+1. Intraday Trading:
+- Buy and sell within same day
+- High risk
+
+2. Swing Trading:
+- Hold for days/weeks
+
+3. Long-Term Investing:
+- Hold for years
+
+---
+
+[RISK_FACTORS]
+
+- Market Risk (economic changes)
+- Company Risk (bad management)
+- Liquidity Risk
+
+---
+
+[INDIAN_STOCK_MARKET]
+
+Major Exchanges:
+- NSE (National Stock Exchange)
+- BSE (Bombay Stock Exchange)
+
+Index Examples:
+- NIFTY 50
+- SENSEX
+
+---
+
+[EXAMPLE]
+
+If you buy a stock at ₹100 and sell at ₹130:
+Capital Gain = ₹30 per share

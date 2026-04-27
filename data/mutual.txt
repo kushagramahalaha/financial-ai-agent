@@ -1,0 +1,82 @@
+[MUTUAL_FUNDS_BASICS]
+
+A mutual fund pools money from investors and invests in stocks, bonds, or other assets.
+
+Managed by: Fund Manager
+
+---
+
+[TYPES_OF_FUNDS]
+
+1. Equity Funds:
+- Invest in stocks
+- High risk, high return
+
+2. Debt Funds:
+- Invest in bonds
+- Low risk
+
+3. Hybrid Funds:
+- Mix of equity + debt
+
+---
+
+[POPULAR_CATEGORIES]
+
+- Large Cap Fund
+- Mid Cap Fund
+- Index Fund
+- ELSS (Tax Saving)
+- Sectoral Fund
+
+---
+
+[SIP_VS_LUMPSUM]
+
+1. SIP (Systematic Investment Plan):
+- Invest fixed amount regularly
+- Reduces market timing risk
+
+2. Lumpsum:
+- One-time investment
+- Best in falling markets
+
+---
+
+[KEY_METRICS]
+
+1. NAV (Net Asset Value):
+- Price of fund unit
+
+2. Expense Ratio:
+- Fund management fee
+
+3. AUM (Assets Under Management):
+- Total fund size
+
+---
+
+[RISK_LEVELS]
+
+- Low: Debt Funds
+- Medium: Hybrid Funds
+- High: Equity Funds
+
+---
+
+[TAXATION]
+
+- Equity Funds:
+  - STCG: 15%
+  - LTCG: 10%
+
+- Debt Funds:
+  - Taxed as per income slab
+
+---
+
+[EXAMPLE]
+
+If you invest ₹5000/month via SIP for 12 months:
+Total Invested = ₹60,000
+Returns depend on market performance

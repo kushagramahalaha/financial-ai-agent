@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import voyageai
 
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.embeddings.base import Embeddings
@@ -33,21 +33,27 @@ class VoyageEmbeddings(Embeddings):
         )
         return result.embeddings[0]
 
-
+# adding the data file for chunks
 def main():
 
     print("Loading financial knowledge...")
 
-    loader = TextLoader("../data/finance.txt")
+    loader = DirectoryLoader(
+    "../data/",
+    glob="**/*.txt",
+    loader_cls=TextLoader
+)
+
     documents = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=50
+        chunk_size=420,
+        chunk_overlap=70
     )
 
     docs = text_splitter.split_documents(documents)
-
+    for doc in documents:
+       doc.metadata["source"] = doc.metadata.get("source", "unknown")
     print(f"Total chunks created: {len(docs)}")
 
     embeddings = VoyageEmbeddings()
