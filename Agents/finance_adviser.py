@@ -118,19 +118,46 @@ while True:
     # -------------------------
     # 4. TOOL CALLING (DIRECT)
     # -------------------------
-    tool_output = ""
+    tools = [get_stock_price, get_financial_news, investment_cal, smart_portfolio_analyzer]
+    llm_with_tools = llm.bind_tools(tools)
+    
+    prompt = f"""
+Query: {question}
 
-    if "stock" in question.lower():
-        tool_output = get_stock_price("AAPL")
+Use the appropriate tools to help answer the user's query. You can use multiple tools if needed.
+Extract the correct parameters like ticker symbols or topics from the query. If no tools are needed, do not call any.
+"""
+    
+    try:
+        response = llm_with_tools.invoke(prompt)
+    except Exception as e:
+        print("❌ LLM Tool Call Error:", e)
+        response = None
 
-    elif "news" in question.lower():
-        tool_output = get_financial_news()
+    output_lines = []
+    
+    if response and getattr(response, "tool_calls", None):
+        for tool_call in response.tool_calls:
+            tool_name = tool_call["name"]
+            tool_args = tool_call["args"]
+            try:
+                if tool_name == "get_stock_price":
+                    res = get_stock_price.invoke(tool_args)
+                elif tool_name == "get_financial_news":
+                    res = get_financial_news.invoke(tool_args)
+                elif tool_name == "investment_cal":
+                    res = investment_cal.invoke(tool_args)
+                elif tool_name == "smart_portfolio_analyzer":
+                    res = smart_portfolio_analyzer.invoke(tool_args)
+                else:
+                    res = "Unknown tool"
+                output_lines.append(f"{tool_name} ({tool_args}) output:\n{res}")
+            except Exception as e:
+                output_lines.append(f"Error executing {tool_name}: {e}")
+    else:
+        output_lines.append("No tool needed")
 
-    elif "investment" in question.lower():
-        tool_output = investment_cal(10000, 5, 10)
-
-    elif "portfolio" in question.lower():
-        tool_output = smart_portfolio_analyzer(user_data)
+    tool_output = "\n".join(output_lines)
 
     # -------------------------
     # 5. FINAL PROMPT

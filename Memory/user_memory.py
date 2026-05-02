@@ -4,7 +4,6 @@ from datetime import datetime
 
 FILE_PATH = "memory.json"
 
-
 # -----------------------------
 # DEFAULT MEMORY STRUCTURE
 # -----------------------------
@@ -38,7 +37,6 @@ def default_memory():
         "alerts": []
     }
 
-
 # -----------------------------
 # LOAD MEMORY
 # -----------------------------
@@ -51,7 +49,6 @@ def load_memory():
     with open(FILE_PATH, "r") as f:
         return json.load(f)
 
-
 # -----------------------------
 # SAVE MEMORY
 # -----------------------------
@@ -59,28 +56,29 @@ def save_memory(data):
     with open(FILE_PATH, "w") as f:
         json.dump(data, f, indent=4)
 
-
 # -----------------------------
 # GET MEMORY
 # -----------------------------
 def get_memory():
     return load_memory()
 
-
 # -----------------------------
 # UPDATE PROFILE
 # -----------------------------
-def update_profile(key, value):
-    data = load_memory()
+def update_profile(key, value, data=None):
+    auto_save = data is None
+    if auto_save: data = load_memory()
+    
     data["long_term"]["profile"][key] = value
-    save_memory(data)
-
+    
+    if auto_save: save_memory(data)
 
 # -----------------------------
 # ADD GOAL
 # -----------------------------
-def add_goal(goal):
-    data = load_memory()
+def add_goal(goal, data=None):
+    auto_save = data is None
+    if auto_save: data = load_memory()
 
     goal_obj = {
         "goal": goal,
@@ -88,52 +86,54 @@ def add_goal(goal):
     }
 
     data["long_term"]["goals"].append(goal_obj)
-    save_memory(data)
-
+    
+    if auto_save: save_memory(data)
 
 # -----------------------------
 # ADD STOCK
 # -----------------------------
-def add_stock(stock, amount):
-    data = load_memory()
+def add_stock(stock, amount, data=None):
+    auto_save = data is None
+    if auto_save: data = load_memory()
 
     portfolio = data["long_term"]["portfolio"]
-
     portfolio.append({
         "stock": stock,
         "invested_amount": amount,
         "date": str(datetime.now())
     })
 
-    save_memory(data)
-
+    if auto_save: save_memory(data)
 
 # -----------------------------
 # ADD TRANSACTION
 # -----------------------------
-def add_transaction(txn):
-    data = load_memory()
+def add_transaction(txn, data=None):
+    auto_save = data is None
+    if auto_save: data = load_memory()
 
     txn["date"] = str(datetime.now())
     data["long_term"]["transactions"].append(txn)
 
-    save_memory(data)
-
+    if auto_save: save_memory(data)
 
 # -----------------------------
 # UPDATE SHORT TERM
 # -----------------------------
-def update_short_term(key, value):
-    data = load_memory()
+def update_short_term(key, value, data=None):
+    auto_save = data is None
+    if auto_save: data = load_memory()
+    
     data["short_term"][key] = value
-    save_memory(data)
-
+    
+    if auto_save: save_memory(data)
 
 # -----------------------------
 # ADD ALERT
 # -----------------------------
-def add_alert(message):
-    data = load_memory()
+def add_alert(message, data=None):
+    auto_save = data is None
+    if auto_save: data = load_memory()
 
     alert = {
         "message": message,
@@ -141,4 +141,5 @@ def add_alert(message):
     }
 
     data["alerts"].append(alert)
-    save_memory(data)
+    
+    if auto_save: save_memory(data)

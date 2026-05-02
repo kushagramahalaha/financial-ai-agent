@@ -3,7 +3,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import streamlit as st
 
 
-from Memory.user_memory import get_memory
+from Memory.user_memory import get_memory, save_memory, add_goal
 from Memory.extractor import process_and_store
 from graph.builder import build_graph
 
@@ -32,10 +32,37 @@ memory = get_memory()
 # -----------------------------
 st.sidebar.title("👤 User Profile")
 
-st.sidebar.write("**Name:**", memory["user"]["name"])
-st.sidebar.write("**Income:**", memory["long_term"]["profile"]["income"])
-st.sidebar.write("**Expenses:**", memory["long_term"]["profile"]["fixed_expenses"])
-st.sidebar.write("**Risk:**", memory["long_term"]["profile"]["risk_tolerance"])
+with st.sidebar.form("profile_form"):
+    st.subheader("Update Information")
+    
+    current_name = memory["user"].get("name", "")
+    current_income = memory["long_term"]["profile"].get("income") or 0.0
+    current_expenses = memory["long_term"]["profile"].get("fixed_expenses") or 0.0
+    
+    new_name = st.text_input("Name", value=current_name)
+    new_income = st.number_input("Monthly Salary (₹)", value=float(current_income), step=1000.0)
+    new_expenses = st.number_input("Monthly Expenses (₹)", value=float(current_expenses), step=1000.0)
+    
+    new_monthly_goal = st.text_input("Goal of the Month", placeholder="e.g. Save ₹5000")
+    new_long_term_goal = st.text_input("Long Term Goal", placeholder="e.g. Buy a house")
+    
+    submit_button = st.form_submit_button("Save Profile")
+    
+    if submit_button:
+        memory["user"]["name"] = new_name
+        memory["long_term"]["profile"]["income"] = new_income
+        memory["long_term"]["profile"]["fixed_expenses"] = new_expenses
+        
+        if new_monthly_goal.strip():
+            add_goal(f"Monthly: {new_monthly_goal}", data=memory)
+        if new_long_term_goal.strip():
+            add_goal(f"Long Term: {new_long_term_goal}", data=memory)
+            
+        save_memory(memory)
+        st.success("Profile Updated!")
+        st.rerun()
+
+st.sidebar.write("**Risk Tolerance:**", memory["long_term"]["profile"].get("risk_tolerance", "Unknown"))
 
 # -----------------------------
 # GOALS

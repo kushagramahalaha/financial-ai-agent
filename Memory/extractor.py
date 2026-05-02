@@ -90,21 +90,25 @@ def process_and_store(user_input: str):
     # LOAD MEMORY ONCE
     # -----------------------------
     memory = get_memory()
+    memory_changed = False
 
     # -----------------------------
     # NAME UPDATE
     # -----------------------------
     if extracted.get("name"):
         memory["user"]["name"] = extracted["name"]
+        memory_changed = True
 
     # -----------------------------
     # PROFILE UPDATE
     # -----------------------------
     if extracted.get("income") is not None:
-        update_profile("income", extracted["income"])
+        update_profile("income", extracted["income"], data=memory)
+        memory_changed = True
 
     if extracted.get("risk_tolerance"):
-        update_profile("risk_tolerance", extracted["risk_tolerance"])
+        update_profile("risk_tolerance", extracted["risk_tolerance"], data=memory)
+        memory_changed = True
 
     # -----------------------------
     # EXPENSE UPDATE
@@ -113,44 +117,46 @@ def process_and_store(user_input: str):
         current = memory["long_term"]["profile"]["fixed_expenses"]
         new_total = current + extracted["expenses"]
 
-        update_profile("fixed_expenses", new_total)
+        update_profile("fixed_expenses", new_total, data=memory)
 
         add_transaction({
             "type": "expense",
             "amount": extracted["expenses"]
-        })
+        }, data=memory)
+        
+        memory_changed = True
 
     # -----------------------------
     # GOAL UPDATE
     # -----------------------------
     if extracted.get("goal"):
-        add_goal(extracted["goal"])
+        add_goal(extracted["goal"], data=memory)
+        memory_changed = True
 
     # -----------------------------
-    # STOCK TRANSACTION (FIXED BUG)
+    # STOCK TRANSACTION
     # -----------------------------
     stock = extracted.get("stock")
     amount = extracted.get("investment_amount")
     action = extracted.get("action")
 
     if action == "buy" and stock and amount:
-        add_stock(stock, amount)
+        add_stock(stock, amount, data=memory)
 
         add_transaction({
             "type": "buy",
             "asset": stock,
             "amount": amount
-        })
+        }, data=memory)
 
-        update_short_term("last_action", "buy")
-        update_short_term("last_transaction", f"{stock} {amount}")
+        update_short_term("last_action", "buy", data=memory)
+        update_short_term("last_transaction", f"{stock} {amount}", data=memory)
+        
+        memory_changed = True
 
     # -----------------------------
     # SAVE UPDATED MEMORY
     # -----------------------------
-    save_memory(memory)
-
-    # -----------------------------
-    # RULE ENGINE CHECK
-    # -----------------------------
-    check_rules()
+    if memory_changed:
+        save_memory(memory)
+        check_rules()

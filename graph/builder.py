@@ -40,56 +40,50 @@ def tool_node(state):
     context = state.get("rag_context", "")
 
     # -------- Decision using LLM --------
+    tools = [get_stock_price, get_financial_news, investment_cal, smart_portfolio_analyzer]
+    llm_with_tools = llm.bind_tools(tools)
+    
     prompt = f"""
-Decide the best tool:
-
 Query: {query}
 Context: {context}
 
-Options:
-- stock
-- news
-- investment
-- portfolio
-- none
-
-Return only one word.
+Use the appropriate tools to help answer the user's query. You can use multiple tools if needed (e.g. fetching stock price and news at the same time).
+Extract the correct parameters like ticker symbols or topics from the query. If no tools are needed, do not call any.
 """
 
     try:
-        decision = llm.invoke(prompt).content.strip().lower()
+        response = llm_with_tools.invoke(prompt)
     except Exception as e:
         print("❌ LLM Decision Error:", e)
-        decision = "none"
+        return {"tool_output": "Tool execution failed"}
 
-    print("TOOL DECISION:", decision)
+    output_lines = []
 
-    output = "No tool needed"
+    if getattr(response, "tool_calls", None):
+        for tool_call in response.tool_calls:
+            tool_name = tool_call["name"]
+            tool_args = tool_call["args"]
+            print(f"TOOL DECISION: {tool_name} {tool_args}")
+            try:
+                if tool_name == "get_stock_price":
+                    res = get_stock_price.invoke(tool_args)
+                elif tool_name == "get_financial_news":
+                    res = get_financial_news.invoke(tool_args)
+                elif tool_name == "investment_cal":
+                    res = investment_cal.invoke(tool_args)
+                elif tool_name == "smart_portfolio_analyzer":
+                    res = smart_portfolio_analyzer.invoke(tool_args)
+                else:
+                    res = "Unknown tool"
+                output_lines.append(f"{tool_name} ({tool_args}) output:\n{res}")
+            except Exception as e:
+                print("❌ TOOL EXECUTION ERROR:", e)
+                output_lines.append(f"Error executing {tool_name}: {e}")
+    else:
+        print("TOOL DECISION: none")
+        output_lines.append("No tool needed")
 
-    # -------- Tool Execution --------
-    try:
-        if decision == "stock":
-            output = get_stock_price.invoke({"ticker": "AAPL"})
-
-        elif decision == "news":
-            output = get_financial_news.invoke({"topic": "stock market"})
-
-        elif decision == "investment":
-            output = investment_cal.invoke({
-                "monthly_investment": 5000,
-                "annual_return": 10,
-                "years": 10
-            })
-
-        elif decision == "portfolio":
-            output = smart_portfolio_analyzer.invoke({
-                "stocks": ["AAPL", "MSFT", "NVDA"]
-            })
-
-    except Exception as e:
-        print("❌ TOOL EXECUTION ERROR:", e)
-        output = "Tool execution failed"
-
+    output = "\n".join(output_lines)
     print("TOOL OUTPUT:", str(output)[:200])
 
     return {"tool_output": output}
