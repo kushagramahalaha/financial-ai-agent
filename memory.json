@@ -6,15 +6,11 @@
     },
     "long_term": {
         "profile": {
-            "income": 100000.0,
-            "fixed_expenses": 20000.0,
+            "income": 150000.0,
+            "fixed_expenses": 10000.0,
             "risk_tolerance": "medium"
         },
         "goals": [
-            {
-                "goal": "buy a car in two years",
-                "created_at": "2026-04-18 18:15:25.919466"
-            },
             {
                 "goal": "Monthly: buy AC rs 35000",
                 "created_at": "2026-05-02 23:55:36.320429"
@@ -22,158 +18,6 @@
             {
                 "goal": "Long Term: buy a car rs 25 lakhs",
                 "created_at": "2026-05-02 23:55:36.320450"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:35.169517"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:35.169539"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:39.700688"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:39.700712"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:43.839667"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:43.839688"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:46.595707"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:46.595729"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:47.500109"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:47.500130"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:48.002542"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:48.002563"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:48.130015"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:48.130023"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:48.235624"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:48.235633"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:49.207506"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:49.207528"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:49.475483"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:49.475495"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:49.819302"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:49.819327"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:50.061381"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:50.061390"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:51.619253"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:51.619275"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:51.949361"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:51.949375"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:52.471388"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:52.471412"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:54.918504"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:54.918524"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:57.389617"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:57.389640"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:12:57.886155"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:12:57.886176"
-            },
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-03 00:13:00.118689"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-03 00:13:00.118712"
             }
         ],
         "portfolio": [],
