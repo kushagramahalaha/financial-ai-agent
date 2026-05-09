@@ -79,16 +79,18 @@ def update_profile(key, value, data=None):
 def add_goal(goal, data=None):
     auto_save = data is None
     if auto_save: data = load_memory()
-
-    goal_obj = {
-        "goal": goal,
-        "created_at": str(datetime.now())
-    }
-
-    data["long_term"]["goals"].append(goal_obj)
+    # Create a list of existing goals (just the text, ignoring timestamps)
+    existing_goals = [g["goal"] for g in data["long_term"]["goals"]]
     
-    if auto_save: save_memory(data)
-
+    # Check if the goal is already in the list before adding
+    if goal not in existing_goals:
+        goal_obj = {
+            "goal": goal,
+            "created_at": str(datetime.now())
+        }
+        data["long_term"]["goals"].append(goal_obj)
+        
+        if auto_save: save_memory(data)
 # -----------------------------
 # ADD STOCK
 # -----------------------------
