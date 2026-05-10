@@ -23,11 +23,12 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 def rag_node(state):
     print("\n🔍 RAG NODE RUNNING")
 
-    context = get_rag_context(state["user_query"])
+    context_data = get_rag_context(state["user_query"])
+    context_str = context_data.get("context", "") if isinstance(context_data, dict) else str(context_data)
 
-    print("RAG CONTEXT:", str(context)[:200])
+    print("RAG CONTEXT:", context_str[:200])
 
-    return {"rag_context": context}
+    return {"rag_context": context_str}
 
 
 # -----------------------------

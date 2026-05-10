@@ -17,6 +17,18 @@ st.set_page_config(
     layout="wide"
 )
 
+# Hide the "Press Enter to submit form" text
+st.markdown(
+    """
+    <style>
+    div[data-testid="InputInstructions"] {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # -----------------------------
 # TITLE
 # -----------------------------

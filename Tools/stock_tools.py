@@ -27,5 +27,5 @@ def get_stock_price(ticker: str) -> str:
     try:
         price = data["Global Quote"]["05. price"]
         return f"The current price of {ticker} is ${price}"
-    except:
-        return "Could not retrieve stock data."
+    except Exception as e:
+        return f"Could not retrieve stock data. API Response: {data}"
