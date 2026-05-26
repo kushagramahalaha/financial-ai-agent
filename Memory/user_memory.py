@@ -94,14 +94,23 @@ def add_goal(goal, data=None):
 # -----------------------------
 # ADD STOCK
 # -----------------------------
-def add_stock(stock, amount, data=None):
+def add_stock(stock, amount, buy_price=None, quantity=None, data=None):
     auto_save = data is None
     if auto_save: data = load_memory()
 
+    if buy_price is None:
+        buy_price = amount
+    if quantity is None:
+        quantity = 1.0
+
+    invested_amount = buy_price * quantity
+
     portfolio = data["long_term"]["portfolio"]
     portfolio.append({
-        "stock": stock,
-        "invested_amount": amount,
+        "stock": stock.upper(),
+        "buy_price": float(buy_price),
+        "quantity": float(quantity),
+        "invested_amount": float(invested_amount),
         "date": str(datetime.now())
     })
 

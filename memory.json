@@ -1,17 +1,16 @@
 {
     "user": {
         "user_id": "kush001",
-        "name": "kushagra",
+        "name": "naman",
         "created_at": "2026-04-18 01:04:29.677273"
     },
     "long_term": {
         "profile": {
-            "income": 100000.0,
-            "fixed_expenses": 20000.0,
+            "income": 50000.0,
+            "fixed_expenses": 113000.0,
             "risk_tolerance": "medium"
         },
         "goals": [
-            
             {
                 "goal": "Monthly: buy AC rs 35000",
                 "created_at": "2026-05-02 23:55:36.320429"
@@ -19,15 +18,39 @@
             {
                 "goal": "Long Term: buy a car rs 25 lakhs",
                 "created_at": "2026-05-02 23:55:36.320450"
+            },
+            {
+                "goal": "Monthly: byu a new tv",
+                "created_at": "2026-05-26 10:22:23.213009"
+            },
+            {
+                "goal": "AC, house",
+                "created_at": "2026-05-26 11:00:09.469599"
+            },
+            {
+                "goal": "Monthly: buy a new tv",
+                "created_at": "2026-05-26 21:51:41.623397"
             }
-           
         ],
-        "portfolio": [],
+        "portfolio": [
+            {
+                "stock": "AAPL",
+                "buy_price": 150.0,
+                "quantity": 10.0,
+                "invested_amount": 1500.0,
+                "date": "2026-05-26 22:07:00.861983"
+            }
+        ],
         "transactions": [
             {
                 "type": "expense",
                 "amount": 2100000,
                 "date": "2026-04-19 00:01:14.360914"
+            },
+            {
+                "type": "expense",
+                "amount": 20000,
+                "date": "2026-05-26 11:00:09.469572"
             }
         ]
     },
@@ -37,5 +60,10 @@
         "session_context": null
     },
     "derived": {},
-    "alerts": []
+    "alerts": [
+        {
+            "message": "\u26a0\ufe0f You are overspending!",
+            "date": "2026-05-26 11:00:09.470705"
+        }
+    ]
 }

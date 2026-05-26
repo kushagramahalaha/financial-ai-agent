@@ -1,3 +1,4 @@
+from typing import List
 from langchain.tools import tool
 from Tools.stock_tools import get_stock_price
 from Tools.news_tool import get_financial_news
@@ -8,7 +9,7 @@ llm=ChatGoogleGenerativeAI(
 )
 
 @tool
-def smart_portfolio_analyzer(stocks: list) -> str:
+def smart_portfolio_analyzer(stocks: List[str]) -> str:
     """
     Analyze portfolio using stock data and sector logic.
     """

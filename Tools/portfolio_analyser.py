@@ -1,7 +1,8 @@
+from typing import List
 from langchain.tools import tool
 
 @tool
-def analyze_portfolio(stocks: list) -> str:
+def analyze_portfolio(stocks: List[str]) -> str:
     """
     Analyze portfolio diversification.
     Example input: ["AAPL", "MSFT", "GOOGL"]
