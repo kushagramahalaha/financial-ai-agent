@@ -3,3 +3,7 @@ __pycache__/
 .env
 *.pyc
 .ipynb_checkpoints
+.venv/
+api_test.log
+memory.json
+.DS_Store
