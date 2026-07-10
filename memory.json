@@ -11,37 +11,15 @@
             "risk_tolerance": "medium"
         },
         "goals": [
-            {
-                "goal": "Monthly: buy AC rs 35000",
-                "created_at": "2026-05-02 23:55:36.320429"
-            },
-            {
-                "goal": "Long Term: buy a car rs 25 lakhs",
-                "created_at": "2026-05-02 23:55:36.320450"
-            },
-            {
-                "goal": "Monthly: byu a new tv",
-                "created_at": "2026-05-26 10:22:23.213009"
-            },
-            {
-                "goal": "AC, house",
-                "created_at": "2026-05-26 11:00:09.469599"
-            },
-            {
-                "goal": "Monthly: buy a new tv",
-                "created_at": "2026-05-26 21:51:41.623397"
-            },
-            {
-                "goal": "Monthly: car rs 1500000",
-                "created_at": "2026-05-29 01:01:40.623012"
-            },
+            
             {
                 "goal": "Long Term: buy a house rs 5000000",
                 "created_at": "2026-05-29 01:01:40.623037"
             },
+            
             {
-                "goal": "Manish",
-                "created_at": "2026-05-29 01:02:23.629511"
+                "goal": "monthly goal",
+                "created_at": "2026-06-25 21:54:30.600119"
             }
         ],
         "portfolio": [
