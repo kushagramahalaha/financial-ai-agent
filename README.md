@@ -77,7 +77,7 @@ uvicorn app:app --reload
 - **`/graph`**: Contains the LangGraph builder logic that orchestrates the multi-agent workflow.
 - **`/Memory`**: Memory extractors and user memory management to track goals and expenses.
 - **`/Tools`**: Custom LangChain tools (Investment Calculator, Portfolio Analyzer, Stock Price Fetcher, News Fetcher).
-- **`/vector_db` & `/RAG`**: Storage for embeddings and RAG components using ChromaDB.
+- **`/vector_db` & `/RAG`**: Storage for embeddings and RAG components using FAISS.
 
 ---
 
